@@ -130,3 +130,142 @@ for f in $(find . -name *.c)
 ```
 
 using a command to generate a list
+
+use
+
+```
+| more
+```
+
+to be able to scroll/press enter to see the next set of results if they go over the screen
+
+# Bash Functions
+
+To organise code in a shell program
+
+```
+function printhello {
+	echo hello
+}
+
+print hello
+```
+shell memorises the function like it is a new command
+
+# Return command
+
+```
+function myFunc{
+echo starting
+retun
+echo this will not be executed
+}
+```
+
+functions produce results by writing output
+
+```
+hvar=$(printhello)
+```
+
+# Exit command
+
+exit <VALUE> sets the exit status, represented by $? to <VALUE>
+
+exit terminates the shell process
+
+exit in a function terminates the whole shell program, not just the function
+
+# Redirection and Pipes
+
+0 => stdin,  1 => stdout, 2=>stderr
+
+command
+
+```&> file```
+
+file gets stdout and stderr from command, files is created of overwritten
+
+```
+command | command 2
+```
+
+command2's stdin comes from command's stdout
+
+```
+command 2>&1 | command2
+```
+
+gets stdout and stderr from command
+
+```
+command |& command 2
+```
+
+alternative way for command2 to get command's stdout and stderr as its stdin
+
+```
+command >> file
+```
+
+appends stdout of command to end of file
+
+```
+command &>> file
+```
+
+appends stdout and stderr of command to end of file
+
+# Here Documents: <<
+
+Here documents are a way to embed input for standard input inside of a script
+
+They avoid having to create a new file just to hold some input values.
+
+```
+sort <<END
+cherry
+banana
+apple
+orange
+END
+```
+
+```
+exec N< myfile
+```
+
+opens file descriptor N for reading from file myfile
+
+```
+exec N> myfile
+```
+
+opens file descriptor N for writing to myfile
+
+```
+exec N<> myfile
+```
+
+opens file descriptor N for reading and writing with myfile
+
+```
+exec N>&- or exec N<&-
+```
+
+closes file descriptor N
+
+```
+lsof
+```
+
+see what file descriptors for a process are open
+
+```
+exec 7>/tmp/myfile7
+lsof -p $$
+```
+
+$$ is shell's PID
+
+
