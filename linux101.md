@@ -36,23 +36,28 @@ reads first word into a and the rest into b
 
 good for a while loop
 
-```while
+```
+while
 	command list 1
 do
 	command list 
-done```
+done
+```
 
 this loops while command list 1 succeeds
 
-```while
+```
+while
 	((x<10))
-dols
+do	ls
 
 	echo loop $x; date >data.$x
 	((x=x+1))
-done```
+done
+```
 
-```while
+```
+while
 	((x<10))
 do
 	echo loop $x; date >data.$x
@@ -60,7 +65,8 @@ do
 done
 ```
 
-```while
+```
+while
 	read a b
 do
 	echo a is $a b is $b
@@ -69,42 +75,57 @@ done <data_file
 
 piping into a while
 
-```ls -l | while
+```
+ls -l | while
 read a b c d
 do
 echo owner s $c
-done ```
+done 
+```
 
 # For Loops
 
-```for <var> in <list>
+```
+for <var> in <list>
 do 
 	command list
-done```
+done
+```
 
-```for i in dog cat elephant
+```
+for i in dog cat elephant
 do
 	echo i is $i
-done```
+done
+```
 
-```seq 1 5```
+```
+seq 1 5
+```
 
 prints 1 2 3 4 5
 
-```for num in <back tick>`seq 1 5` <back tick> ```
+```
+for num in <back tick>`seq 1 5` <back tick>
+```
 
 loops over 1 2 3 4 5
 
-```for d in $(<data_file)```
+```for d in $(<data_file)
+```
 
 loops over space/newline
 
 separated data in data_file
 
-``` for j in *.c```
+```
+for j in *.c
+```
 
 making a list with file globbing
 
-```for f in $(find . -name *.c)
+```
+for f in $(find . -name *.c)
+```
 
 using a command to generate a list
