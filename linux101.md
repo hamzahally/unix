@@ -111,7 +111,8 @@ for num in <back tick>`seq 1 5` <back tick>
 
 loops over 1 2 3 4 5
 
-```for d in $(<data_file)
+```
+for d in $(<data_file)
 ```
 
 loops over space/newline
