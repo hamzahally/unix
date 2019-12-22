@@ -362,3 +362,34 @@ if
 echo y = $y
 ```
 prints 9, why?
+
+# Challenge: Local Vars
+
+- Write a bash script that has a function f
+- Creates a local variable A, sets it to 1, and then prints its value
+- Sets A=2, calls f, and then prints A after f returns
+
+# Challenge: Loops
+
+- Write a bash script that uses a for loop to loop over all of the 
+files in /usr/bin and echo the name of any of them that has inside 
+the string "unable to fork"
+
+Hint:
+if
+	strings $i | grep -q "unable to fork"
+	then
+
+# Challenge: Arithmetic
+
+- Write a script that echos a running total of the RSS and SZ columns 
+from the command: ps -ly
+
+Hint:
+n=1
+	ps -ly | while
+	read c1 c2 c3 c4 c5 c6 c7 c8 c9 c10
+	do
+		if((n>1))
+		...
+
