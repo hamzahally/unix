@@ -162,7 +162,7 @@ shell memorises the function like it is a new command
 ```
 function myFunc{
 echo starting
-retun
+return
 echo this will not be executed
 }
 ```
