@@ -269,3 +269,96 @@ lsof -p $$
 $$ is shell's PID
 
 
+# The Case Statement
+
+```
+case expression in
+pattern 1 )
+	command list ;;
+pattern 2 )
+	command list ;;
+...
+esac
+```
+
+# If-Then-Else Statement
+
+```
+if 
+command list # last result is used
+then
+command list
+[else
+command list]
+fi
+```
+
+# Test Command
+
+```
+if 
+test -f afile
+```
+
+```
+if [[ -f bfile ]]
+```
+
+```
+if
+test $x -gt 5
+```
+
+## More tests
+
+```
+test -d X
+```
+
+success if X is a directory
+
+```
+test -f X
+```
+
+success if X is a regular file
+
+```
+test -s X
+```
+
+success if X exists and not empty
+
+```
+test -x X
+```
+
+success if you have x permission on X
+
+```
+test -w X
+```
+
+success if you have w permission on X
+
+```
+test -r X
+```
+
+success if you have r permission on X
+
+# Arithmetic Operators
+
+```
+n=5
+((n++))
+if
+((n>4 || n == ))
+```
+
+```
+((n=2**3 + 5))
+((y=n^4))
+echo y = $y
+```
+prints 9, why?
