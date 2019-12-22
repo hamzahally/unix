@@ -1,10 +1,16 @@
+# Unix
+
 # Local Variables and Typeset
+
+typeset command makes local variables
 
 ```typeset -i x```
 
 x must be an integer
 
 makes calculations faster when variables are defined to be integers
+
+# Declare Command
 
 ```declare -l``` 
 
@@ -27,7 +33,7 @@ MyArray will make MyArray an indexed array
 
 ```declare -A```
 
-MyArray2 will make MyArray2 an associative arra
+MyArray2 will make MyArray2 an associative array
 # The read command
 
 ```read a b```
@@ -49,8 +55,7 @@ this loops while command list 1 succeeds
 ```
 while
 	((x<10))
-do	ls
-
+do
 	echo loop $x; date >data.$x
 	((x=x+1))
 done
@@ -79,14 +84,14 @@ piping into a while
 ls -l | while
 read a b c d
 do
-echo owner s $c
+echo owner is $c
 done 
 ```
 
 # For Loops
 
 ```
-for <var> in <list>
+for <variable> in <list>
 do 
 	command list
 done
